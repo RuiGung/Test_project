@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Детальная информация об уроке</h1>
+  <p>Название: {{ object.name }}</p>
+  <p>Ссылка на видео: {{ object.video_link }}</p>
+  <p>Длительность (секунды): {{ object.duration_seconds }}</p>
+  <form id="view-lesson-form">
+    {% csrf_token %}
+    <input type="hidden" name="viewed_time" id="viewed-time-input" value="0">
+    <button type="button" id="view-lesson-button">Просмотрено</button>
+  </form>
+{% endblock %}

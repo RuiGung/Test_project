@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Список уроков</h1>
+  <ul>
+    {% for lesson in object_list %}
+      <li><a href="{% url 'lessons:lesson_detail' lesson.pk %}">{{ lesson.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
