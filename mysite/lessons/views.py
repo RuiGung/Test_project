@@ -3,8 +3,13 @@ from django.shortcuts import render
 
 #Сущность Продукт
 def index(request):
+    text = 'Главная страница'
+
     template = 'lessons/index.html'
-    return render(request, template)
+    context = {
+        'title': text,
+    }
+    return render(request, template, context)
     #return HttpResponse('Главная страница')
 
 def product(request):
@@ -14,11 +19,12 @@ def product(request):
 #Сущность Урок
 def lesson_list(request):
     template = 'lessons/lesson_list.html'
-    return HttpResponse('Список Уроков')
+    return render(request, template)
 
 
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
-def View_lesson_detail(request, slug):
+def View_lesson_detail(request):
     template_name = 'lessons/lesson_detail.html'
-    return HttpResponse(f'<h1>Урок номер</h1> {slug}')
+    context = {}
+    return render(request, template_name)
 # Create your views here.

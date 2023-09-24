@@ -2,9 +2,9 @@
     <nav>
         <ul>
             <li><a href="/">Главная</a></li>
-            <li><a href="/products/">Продукты</a></li>
+            <li><a href={% url 'products_list'%}>Продукты</a></li>
             <li><a href="/lessons/">Уроки</a></li>
-            <li><a href="/View_lesson/<str:slug>/">Детали уроков</a></li>
+            <li><a href="/View_lesson/">Детали уроков</a></li>
             <!-- Добавьте дополнительные пункты меню, если необходимо -->
         </ul>
     </nav>
